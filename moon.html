@@ -5,14 +5,14 @@
     <title>Moon Phase</title>
 
     <!-- Include Required Prerequisites -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
- 
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" />
+     
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" />
 
 </head>
 <body>
@@ -58,13 +58,15 @@
         .attr("height", 249) // make the SVG element 249 pixels high
         .style("background-color", '#011839');
 
-    var octNewMoon = new Date(2017,10,19,15,12,0,0).getTime();
+    var octNewMoon = new Date(2017,9,19,15,12,0,0).getTime();
     var octNewMoon1stQ = new Date(2017,10,27,18,22,0,0).getTime();
     var octNewMoonFull = new Date(2017,11,4,1,22,0,0).getTime();
     var octNewMoon3rdQ = new Date(2017,11,10,15,36,0,0).getTime();
     console.log(octNewMoon);
-    var now = new Date(2017,10,30,18,17,0,0).getTime();
+    var now = Date.now();
     console.log(now);
+    console.log(new Date(now).toDateString())
+    console.log(new Date(octNewMoon).toDateString())
     var someDate = new Date(2017,11,1,0,0,0,0).getTime();
 
     var oneMinute = 60*1000;
@@ -107,10 +109,10 @@
     var cx = 200;
     var cy = 100;
     var r = 50;
-    var p1 = crescentGibbous('left', octNewMoon3rdQ, octNewMoon);
-    var p2 = crescentGibbous('right',octNewMoon3rdQ,octNewMoon);
-    var s1 = waneWax('left',octNewMoon3rdQ,octNewMoon);
-    var s2 = waneWax('left',octNewMoon3rdQ,octNewMoon);
+    var p1 = crescentGibbous('left', now, octNewMoon);
+    var p2 = crescentGibbous('right',now,octNewMoon);
+    var s1 = waneWax('left',now,octNewMoon);
+    var s2 = waneWax('left',now,octNewMoon);
 
     console.log(`p1= ${p1}`)
     console.log(`p2= ${p2}`)
